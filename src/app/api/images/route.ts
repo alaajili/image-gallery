@@ -3,7 +3,7 @@
 export async function GET(req: Request) {
   const url = new URL(req.url);
   const page = url.searchParams.get("page");
-  console.log("fetching page: ", page);
+  // console.log("fetching page: ", page);
   try {
     const res = await fetch(`https://api.unsplash.com/photos?page=${page}`, {
       method: "GET",

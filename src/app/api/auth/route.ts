@@ -1,9 +1,8 @@
 "use server"
 export async function POST(req: Request) {
     
-    console.log("POST request call")
     const body = await req.json()
-    console.log(body)
+    // console.log(body)
 
     if (body.username === "muser1" && body.password === "mpassword1" ||
         body.username === "muser2" && body.password === "mpassword2")

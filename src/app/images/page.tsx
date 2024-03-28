@@ -52,7 +52,6 @@ export const images = () => {
 
   const getLikedImages = async (user: string) => {
     const likedImages: string[] = await db.get(user).catch(() => []);
-    console.log("likedImages: ", likedImages)
     return likedImages;
   }
 
@@ -95,7 +94,6 @@ export const images = () => {
       setLikedImages(likedImages.filter((id) => id !== imageId));
     } else {
       // If image is not liked, like it
-      console.log("likedImages => ", likedImages)
       await likeImage(username, imageId);
       setLikedImages([...likedImages, imageId]);
     }
