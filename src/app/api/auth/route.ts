@@ -10,7 +10,7 @@ export async function POST(req: Request) {
         return Response.json({status: "success", message: "success"})
     }
     else if (body.username === "muser3" && body.password === "mpassword3") {
-        return  Response.json({status: "failed", message: "Blocked user"})
+        return  Response.json({status: "failed", message: "Ce compte a été bloqué."})
     }
-    return Response.json({status: "failed", message: "Invalid credentials"})
+    return Response.json({status: "failed", message: "Informations de connexion invalides"})
 }
