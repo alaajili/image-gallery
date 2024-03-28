@@ -51,6 +51,7 @@ export const images = () => {
   };
 
   const getLikedImages = async (user: string) => {
+    await db.open();
     const likedImages: string[] = await db.get(user).catch(() => []);
     return likedImages;
   }
@@ -76,7 +77,6 @@ export const images = () => {
     const username = localStorage.getItem('username')
     if (username) {
       setUsername(username)
-      getLikedImages(username);
       initLikes(username);
     } else {
       router.push("/");
